@@ -1,0 +1,1716 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080811">
+<meta name="description" content="NOLO Designs — תיק עבודות של עיצובים לטיקטוק, לוגואים ו-Thumbnails.">
+<title>NOLO® DESIGNS | Creative Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --blue: #35d5ff;
+  --blue2: #148cff;
+  --purple: #9b5cff;
+  --bg: #080811;
+  --panel: #111120;
+  --text: #f5f5ff;
+  --muted: #a5a5c1;
+  --border: rgba(255,255,255,.10);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Heebo, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 5% 5%, #123b6044, transparent 38%),
+    radial-gradient(ellipse at 95% 25%, #6923a333, transparent 35%),
+    radial-gradient(ellipse at 50% 85%, #18265a22, transparent 45%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .14;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");
+}
+
+a { text-decoration: none; color: inherit; }
+button { font: inherit; }
+
+.container {
+  width: min(1180px, 90%);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(8,8,17,.78);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  direction: ltr;
+  white-space: nowrap;
+}
+
+.logo span { color: var(--blue); }
+
+.links {
+  display: flex;
+  gap: 27px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.links a { transition: color .25s; }
+.links a:hover { color: var(--blue); }
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 21px;
+  border-radius: 12px;
+  font-weight: 800;
+  background: linear-gradient(110deg, var(--blue), var(--purple));
+  color: #080811;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s, background .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px #655cff45;
+}
+
+.btn.secondary {
+  color: white;
+  background: rgba(255,255,255,.04);
+  border-color: #ffffff22;
+}
+
+.btn.secondary:hover {
+  border-color: var(--blue);
+  background: #35d5ff0d;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 50px;
+  padding: 85px 0 75px;
+  position: relative;
+}
+
+.hero-copy {
+  animation: revealUp .9s ease both;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--blue);
+  background: #35d5ff0d;
+  border: 1px solid #35d5ff35;
+  padding: 9px 14px;
+  border-radius: 40px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 12px var(--blue);
+  animation: pulse 2s infinite;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 7.2vw, 92px);
+  line-height: .98;
+  margin: 28px 0;
+  letter-spacing: -4px;
+  direction: ltr;
+  text-align: right;
+}
+
+.hero h1 .outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #aaa5ff;
+}
+
+.gradient {
+  background: linear-gradient(100deg, var(--blue), #7885ff 48%, var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p, .section-description {
+  color: var(--muted);
+  line-height: 2;
+  font-size: 16px;
+}
+
+.hero p { max-width: 540px; }
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 29px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hero-meta b { color: white; }
+
+/* HERO ART */
+
+.art-display {
+  min-height: 440px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  isolation: isolate;
+  animation: revealUp 1s .15s ease both;
+}
+
+.art-display::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: #5447ff22;
+  filter: blur(70px);
+  z-index: -1;
+}
+
+.orb {
+  position: relative;
+  width: min(310px, 76%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 27% 22%, #ffffff, transparent 9%),
+    radial-gradient(circle at 30% 27%, #8ff2ff, #3e91ff 24%, #5b3ccf 53%, #180d32 75%);
+  box-shadow:
+    inset -25px -30px 55px #080811aa,
+    inset 10px 10px 30px #ffffff40,
+    0 0 60px #514dff30;
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border: 1px solid #a5a3ff50;
+  border-radius: 50%;
+  transform: rotate(-30deg) scaleY(.35);
+}
+
+.orb::after {
+  content: "";
+  position: absolute;
+  inset: -27% -12%;
+  border: 2px solid transparent;
+  border-top-color: var(--blue);
+  border-bottom-color: var(--purple);
+  border-radius: 50%;
+  transform: rotate(-32deg) scaleY(.43);
+  filter: drop-shadow(0 0 8px #35d5ff88);
+}
+
+.orb-core {
+  position: absolute;
+  inset: 25%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #ffffff44, transparent 60%);
+  border: 1px solid #ffffff26;
+}
+
+.orb-label {
+  position: absolute;
+  top: 12%;
+  left: 5%;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #ffffff8a;
+  direction: ltr;
+}
+
+.floating-card {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  padding: 17px 21px;
+  background: rgba(15,15,32,.86);
+  backdrop-filter: blur(14px);
+  border: 1px solid #ffffff1c;
+  border-radius: 15px;
+  box-shadow: 0 15px 50px #0005;
+  animation: float 5s 1s ease-in-out infinite;
+}
+
+.floating-card strong {
+  color: var(--blue);
+  font-size: 20px;
+  direction: ltr;
+}
+
+.floating-card small {
+  display: block;
+  color: var(--muted);
+  margin-top: 5px;
+  font-size: 10px;
+  direction: ltr;
+}
+
+.side-label {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  writing-mode: vertical-rl;
+  color: #7775a8;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+/* SECTION HEADERS */
+
+section { padding: 90px 0; }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.kicker {
+  color: var(--blue);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 900;
+  direction: ltr;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+/* PORTFOLIO */
+
+#portfolio { position: relative; }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.filter {
+  background: #ffffff05;
+  color: var(--muted);
+  border: 1px solid #ffffff19;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .25s;
+  font-size: 13px;
+}
+
+.filter.active, .filter:hover {
+  color: white;
+  border-color: var(--blue);
+  background: linear-gradient(110deg, #35d5ff18, #9b5cff18);
+  box-shadow: 0 0 20px #35d5ff0a;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+}
+
+.project {
+  min-width: 0;
+  background: linear-gradient(145deg, #151526, #0d0d18);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+  animation: revealUp .6s ease both;
+}
+
+.project:nth-child(2) { animation-delay: .08s; }
+.project:nth-child(3) { animation-delay: .16s; }
+
+.project:hover {
+  transform: translateY(-9px);
+  border-color: #35d5ff77;
+  box-shadow: 0 20px 55px #0007, 0 0 28px #655cff12;
+}
+
+.project-media {
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 40%, #39305c33, transparent 65%),
+    #0b0b15;
+}
+
+.project-media::after {
+  content: "VIEW PROJECT ↗";
+  direction: ltr;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #080811a8;
+  color: white;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.project:hover .project-media::after { opacity: 1; }
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 10px;
+  transition: transform .55s cubic-bezier(.2,.8,.2,1), filter .35s;
+}
+
+.project:hover .project-image {
+  transform: scale(1.07);
+  filter: saturate(1.15);
+}
+
+.project-info { padding: 20px; }
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.project-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.project-number {
+  color: #77779b;
+  font-size: 11px;
+  direction: ltr;
+}
+
+.project-info p {
+  color: var(--muted);
+  margin: 9px 0 0;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.tag {
+  display: inline-block;
+  color: var(--blue);
+  font-size: 10px;
+  letter-spacing: 1px;
+  border: 1px solid #35d5ff35;
+  background: #35d5ff09;
+  border-radius: 30px;
+  padding: 5px 10px;
+  margin-top: 15px;
+  direction: ltr;
+}
+
+.gallery-note {
+  margin-top: 26px;
+  text-align: center;
+  color: #77778f;
+  font-size: 12px;
+}
+
+/* ABOUT */
+
+.about-box {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  align-items: center;
+  gap: 45px;
+  padding: 38px;
+  background:
+    radial-gradient(ellipse at 0 100%, #35d5ff0a, transparent 45%),
+    linear-gradient(130deg, #111120, #11101e);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-box::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #9b5cff20;
+  border-radius: 50%;
+  top: -110px;
+  left: -70px;
+  box-shadow: 0 0 0 30px #9b5cff05, 0 0 0 60px #9b5cff03;
+  pointer-events: none;
+}
+
+.about-logo {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  border-radius: 20px;
+  font-size: clamp(35px, 5vw, 58px);
+  font-weight: 900;
+  direction: ltr;
+  color: white;
+  background:
+    radial-gradient(circle at 25% 20%, #35d5ff35, transparent 35%),
+    radial-gradient(circle at 80% 80%, #9b5cff44, transparent 45%),
+    #0b0b17;
+  border: 1px solid #ffffff13;
+  box-shadow: inset 0 0 60px #655cff0b;
+  position: relative;
+}
+
+.about-logo span {
+  color: var(--blue);
+  text-shadow: 0 0 35px #35d5ff55;
+}
+
+.about-box p, .contact-box p {
+  color: var(--muted);
+  line-height: 2;
+  font-size: 14px;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.about-tags span {
+  border: 1px solid #ffffff17;
+  background: #ffffff05;
+  border-radius: 9px;
+  padding: 8px 12px;
+  color: #d5d5eb;
+  font-size: 11px;
+}
+
+/* CONTACT */
+
+.contact-box {
+  padding: 65px 25px;
+  border: 1px solid #7770ff38;
+  border-radius: 25px;
+  background:
+    radial-gradient(ellipse at 50% 0%, #6b4dff1c, transparent 60%),
+    linear-gradient(130deg, #10182a, #171027);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-box::before,
+.contact-box::after {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border: 1px solid #ffffff0c;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.contact-box::before {
+  top: -150px;
+  right: -80px;
+  box-shadow: 0 0 0 25px #ffffff03, 0 0 0 50px #ffffff02;
+}
+
+.contact-box::after {
+  bottom: -180px;
+  left: -80px;
+  box-shadow: 0 0 0 25px #ffffff03, 0 0 0 50px #ffffff02;
+}
+
+.contact-box p {
+  max-width: 540px;
+  margin: 15px auto 26px;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 26px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-brand {
+  color: white;
+  font-weight: 900;
+  direction: ltr;
+}
+
+.footer-brand span { color: var(--blue); }
+footer a:hover { color: var(--blue); }
+
+/* IMAGE VIEWER + ZOOM */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(3,3,10,.90);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  place-items: center;
+}
+
+.modal.open {
+  display: grid;
+  animation: fadeIn .2s ease;
+}
+
+.modal-box {
+  width: min(1000px, 100%);
+  max-height: 94vh;
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid #ffffff24;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 30px 100px #0009;
+  animation: modalIn .3s ease;
+}
+
+.modal-image-wrap {
+  position: relative;
+  width: 100%;
+  height: min(68vh, 720px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%, #16162a, #080811 75%);
+  cursor: zoom-in;
+  touch-action: none;
+  user-select: none;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+  transform: translate(0px, 0px) scale(1);
+  transform-origin: center center;
+  transition: transform .18s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.modal-image-wrap.zoomed {
+  cursor: grab;
+}
+
+.modal-image-wrap.dragging {
+  cursor: grabbing;
+}
+
+.zoom-controls {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  direction: ltr;
+}
+
+.zoom-controls button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  color: white;
+  background: rgba(18,18,36,.94);
+  border: 1px solid #ffffff30;
+  font-size: 22px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: .2s;
+}
+
+.zoom-controls button:hover {
+  border-color: var(--blue);
+  box-shadow: 0 0 18px #35d5ff35;
+  background: #20203a;
+}
+
+.zoom-level {
+  min-width: 58px;
+  text-align: center;
+  background: rgba(18,18,36,.94);
+  border: 1px solid #ffffff20;
+  color: var(--blue);
+  padding: 9px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  direction: ltr;
+}
+
+.zoom-hint {
+  position: absolute;
+  bottom: 17px;
+  right: 16px;
+  z-index: 2;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(8,8,17,.75);
+  border: 1px solid #ffffff18;
+  color: #c5c5df;
+  font-size: 11px;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+.modal-image-wrap.zoomed .zoom-hint {
+  opacity: 0;
+}
+
+.modal-text { padding: 22px; }
+.modal-text h2 { font-size: 27px; }
+
+.modal-text p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  border: 1px solid #ffffff30;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  background: rgba(8,8,17,.94);
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background .2s, transform .2s;
+}
+
+.close:hover {
+  background: #9b5cff;
+  transform: rotate(90deg);
+}
+
+/* CUSTOM CURSOR */
+
+.cursor-dot, .cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 100;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  box-shadow: 0 0 12px var(--blue);
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #8e8affaa;
+  transition: width .2s, height .2s, border-color .2s;
+}
+
+.cursor-ring.hovering {
+  width: 48px;
+  height: 48px;
+  border-color: var(--blue);
+}
+
+@media (pointer: fine) {
+  body.custom-cursor, body.custom-cursor a, body.custom-cursor button {
+    cursor: none;
+  }
+
+  body.custom-cursor .cursor-dot,
+  body.custom-cursor .cursor-ring {
+    opacity: 1;
+  }
+}
+
+/* SCROLL REVEAL */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(2deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(.96) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    min-height: 560px;
+  }
+
+  .hero h1 {
+    font-size: clamp(47px, 7vw, 66px);
+    letter-spacing: -2px;
+  }
+
+  .art-display { min-height: 350px; }
+  .gallery { gap: 15px; }
+  .project-media { height: 230px; }
+  .links { gap: 14px; }
+  .nav-inner > .btn { padding: 11px 13px; font-size: 12px; }
+  .about-box { gap: 25px; padding: 25px; }
+}
+
+@media (max-width: 650px) {
+  html { scroll-padding-top: 75px; }
+
+  .container { width: 91%; }
+  .nav-inner { min-height: 67px; }
+  .links { display: none; }
+  .logo { font-size: 19px; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 65px 0 45px;
+    gap: 5px;
+  }
+
+  .hero h1 {
+    font-size: clamp(49px, 12vw, 70px);
+    margin: 24px 0;
+    letter-spacing: -2.5px;
+  }
+
+  .hero p { margin-inline: auto; font-size: 14px; }
+  .buttons { justify-content: center; }
+  .hero-meta { justify-content: center; margin-top: 25px; }
+  .art-display { min-height: 340px; }
+  .orb { width: 225px; }
+  .floating-card { right: 2%; bottom: 5px; }
+  .side-label { right: 4%; }
+
+  section { padding: 62px 0; }
+
+  .section-head {
+    align-items: start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .section-description { font-size: 13px; }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .project { border-radius: 15px; }
+  .project-media { height: 190px; }
+  .project-info { padding: 13px; }
+  .project-info h3 { font-size: 15px; }
+  .project-info p { font-size: 11px; }
+  .project-number { font-size: 9px; }
+  .tag { font-size: 9px; padding: 4px 7px; }
+
+  .about-box {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .about-logo { min-height: 190px; }
+  .contact-box { padding: 48px 17px; }
+  .contact-actions .btn { width: 100%; }
+  .footer-inner { flex-direction: column; text-align: center; }
+
+  .modal { padding: 8px; }
+  .modal-box { border-radius: 15px; max-height: 96vh; }
+  .modal-image-wrap { height: 62vh; }
+  .zoom-controls { bottom: 10px; left: 10px; gap: 5px; }
+  .zoom-controls button { width: 37px; height: 37px; font-size: 20px; }
+  .zoom-level { min-width: 48px; padding: 8px 6px; font-size: 11px; }
+  .zoom-hint { right: 10px; bottom: 12px; font-size: 10px; }
+  .modal-text { padding: 17px; }
+  .modal-text h2 { font-size: 23px; }
+}
+
+@media (max-width: 380px) {
+  .nav-inner > .btn { font-size: 11px; padding: 10px; }
+  .logo { font-size: 16px; }
+  .gallery { grid-template-columns: 1fr; }
+  .project-media { height: 250px; }
+  .zoom-hint { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">🎨 <span>NOLO</span> DESIGNS</a>
+
+    <div class="links">
+      <a href="#home">ראשי</a>
+      <a href="#portfolio">העבודות שלי</a>
+      <a href="#about">עליי</a>
+      <a href="#contact">יצירת קשר</a>
+    </div>
+
+    <a href="#portfolio" class="btn">לצפייה בעבודות ↗</a>
+  </div>
+</nav>
+
+<header class="container hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">
+      <span class="status-dot"></span>
+      CREATIVE DESIGN PORTFOLIO
+    </div>
+
+    <h1>
+      <span class="outline">NOLO</span><br>
+      <span class="gradient">DESIGNS.</span>
+    </h1>
+
+    <p>
+      ברוכים הבאים לעולם העיצוב שלי.
+      אני יוצר עיצובים לטיקטוק, לוגואים ו-Thumbnails ליוטיוב,
+      עם שילוב של יצירתיות, צבעים וסגנון ייחודי.
+    </p>
+
+    <div class="buttons">
+      <a href="#portfolio" class="btn">לגלריית העבודות ↓</a>
+      <a href="#contact" class="btn secondary">בואו נדבר ↗</a>
+    </div>
+
+    <div class="hero-meta">
+      <span><b>01.</b> TikTok Designs</span>
+      <span><b>02.</b> Logos</span>
+      <span><b>03.</b> Thumbnails</span>
+    </div>
+  </div>
+
+  <div class="art-display">
+    <div class="side-label">CREATIVE / DIGITAL / DESIGN</div>
+    <div class="orb">
+      <div class="orb-core"></div>
+    </div>
+
+    <div class="orb-label">NOLO® / 2026</div>
+
+    <div class="floating-card">
+      <strong>NOLO®</strong>
+      <small>TIKTOK • LOGOS • THUMBNAILS</small>
+    </div>
+  </div>
+</header>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker">SELECTED WORKS / 2026</div>
+        <h2>העבודות שלי<span class="gradient">.</span></h2>
+      </div>
+
+      <p class="section-description">
+        כל עיצוב הוא הזדמנות ליצור משהו מיוחד.
+        בחרו קטגוריה ולחצו על עבודה כדי לראות אותה בגדול.
+      </p>
+    </div>
+
+    <div class="filters reveal">
+      <button class="filter active" data-filter="all">כל העבודות</button>
+      <button class="filter" data-filter="tiktok">עיצובים לטיקטוק</button>
+      <button class="filter" data-filter="logo">לוגואים</button>
+      <button class="filter" data-filter="thumbnail">Thumbnails</button>
+    </div>
+
+    <div class="gallery">
+
+      <article class="project"
+        data-category="tiktok"
+        data-title="עיצוב טיקטוק 1"
+        data-description="עיצוב פרימיום לטיקטוק 🔥">
+
+        <div class="project-media">
+          <img class="project-image"
+            src="images/design1.png"
+            alt="עיצוב טיקטוק 1"
+            loading="lazy"
+            onerror="this.alt='התמונה לא נמצאה'; this.style.opacity='.25';">
+        </div>
+
+        <div class="project-info">
+          <div class="project-top">
+            <h3>עיצוב טיקטוק 1</h3>
+            <span class="project-number">PROJECT / 01</span>
+          </div>
+          <p>YouTube • Gaming</p>
+          <span class="tag">TIKTOK</span>
+        </div>
+      </article>
+
+      <article class="project"
+        data-category="tiktok"
+        data-title="עיצוב טיקטוק 2"
+        data-description="לוגו מקורי עם זהות ויזואלית וסגנון ייחודי.">
+
+        <div class="project-media">
+          <img class="project-image"
+            src="images/design2.png"
+            alt="עיצוב טיקטוק 2"
+            loading="lazy"
+            onerror="this.alt='התמונה לא נמצאה'; this.style.opacity='.25';">
+        </div>
+
+        <div class="project-info">
+          <div class="project-top">
+            <h3>עיצוב טיקטוק 2</h3>
+            <span class="project-number">PROJECT / 02</span>
+          </div>
+          <p>Branding • Logo</p>
+          <span class="tag">TIKTOK</span>
+        </div>
+      </article>
+
+      <article class="project"
+        data-category="logo"
+        data-title="פרופיל לטיקטוק"
+        data-description="עיצוב גרפי לתוכן ולפרופילים בטיקטוק.">
+
+        <div class="project-media">
+          <img class="project-image"
+            src="images/design3.png"
+            alt="פרופיל לטיקטוק"
+            loading="lazy"
+            onerror="this.alt='התמונה לא נמצאה'; this.style.opacity='.25';">
+        </div>
+
+        <div class="project-info">
+          <div class="project-top">
+            <h3>פרופיל לטיקטוק</h3>
+            <span class="project-number">PROJECT / 03</span>
+          </div>
+          <p>TikTok • Social Media</p>
+          <span class="tag">LOGO</span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="gallery-note reveal">
+      MORE PROJECTS COMING SOON ✦
+    </p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-box reveal">
+    <div class="about-logo">
+      <span>NOLO</span>®
+    </div>
+
+    <div>
+      <div class="kicker">ABOUT THE DESIGNER</div>
+      <h2>מעצבים רעיונות.<br><span class="gradient">יוצרים זהות.</span></h2>
+
+      <p>
+        אני NOLO, מעצב דיגיטלי שאוהב ליצור עיצובים מקוריים,
+        מיוחדים ומדויקים לכל פרויקט.
+      </p>
+
+      <p>
+        אני מתמחה בעיצובים לטיקטוק, לוגואים ו-Thumbnails ליוטיוב.
+        המטרה שלי היא ליצור עיצובים עם אופי, נוכחות וסגנון שאי אפשר לפספס.
+      </p>
+
+      <div class="about-tags">
+        <span>✦ Creative Design</span>
+        <span>✦ Unique Style</span>
+        <span>✦ Digital Art</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container contact-box reveal">
+    <div class="kicker">LET'S CREATE SOMETHING</div>
+    <h2>יש לכם רעיון?<br><span class="gradient">בואו נהפוך אותו לעיצוב.</span></h2>
+
+    <p>
+      מעוניינים בלוגו, בעיצוב לטיקטוק או ב-Thumbnail ליוטיוב?
+      מוזמנים ליצור איתי קשר ולדבר על הפרויקט שלכם.
+    </p>
+
+    <div class="contact-actions">
+      <a class="btn" href="mailto:hkymnm26@gmail.com">
+        ✉️ שלחו לי אימייל
+      </a>
+
+      <a class="btn secondary"
+         href="https://discord.com/users/1143439783423651870"
+         target="_blank"
+         rel="noopener noreferrer">
+        💬 הפרופיל שלי בדיסקורד
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <a href="#home" class="footer-brand">🎨 <span>NOLO</span> DESIGNS</a>
+    <span>© <span id="year"></span> כל הזכויות שמורות</span>
+    <a href="#home">חזרה למעלה ↑</a>
+  </div>
+</footer>
+
+<!-- IMAGE VIEWER -->
+<div class="modal" id="modal" role="dialog" aria-modal="true"
+     aria-label="תצוגת עיצוב" aria-hidden="true">
+
+  <div class="modal-box">
+    <button class="close" id="close" aria-label="סגירה">×</button>
+
+    <div class="modal-image-wrap" id="zoomArea">
+      <img class="modal-image" id="modalImage" src="" alt="">
+
+      <div class="zoom-controls">
+        <button id="zoomOut" type="button" aria-label="הקטנה" title="הקטנה">−</button>
+        <span class="zoom-level" id="zoomLevel">100%</span>
+        <button id="zoomIn" type="button" aria-label="הגדלה" title="הגדלה">+</button>
+        <button id="zoomReset" type="button" aria-label="איפוס זום" title="איפוס זום">↺</button>
+      </div>
+
+      <div class="zoom-hint" id="zoomHint">
+        לחצו על אזור בעיצוב כדי להגדיל 🔍
+      </div>
+    </div>
+
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+const filterButtons = document.querySelectorAll('.filter');
+const projects = document.querySelectorAll('.project');
+const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalDescription = document.getElementById('modalDescription');
+const zoomArea = document.getElementById('zoomArea');
+const zoomLevel = document.getElementById('zoomLevel');
+const zoomHint = document.getElementById('zoomHint');
+
+let lastFocusedElement = null;
+
+/* PORTFOLIO FILTERS */
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+
+    const filter = button.dataset.filter;
+
+    projects.forEach(project => {
+      const matches = filter === 'all' ||
+        project.dataset.category === filter;
+
+      project.style.display = matches ? '' : 'none';
+    });
+  });
+});
+
+/* ZOOM SYSTEM */
+let zoom = 1;
+const minZoom = 1;
+const maxZoom = 5;
+
+let panX = 0;
+let panY = 0;
+
+let pointerDown = false;
+let dragging = false;
+let movedDuringPointer = false;
+let startX = 0;
+let startY = 0;
+let lastX = 0;
+let lastY = 0;
+let suppressNextClick = false;
+
+let pinchStartDistance = 0;
+let pinchStartZoom = 1;
+let pinchCenter = null;
+
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function updateZoom() {
+  zoom = clamp(zoom, minZoom, maxZoom);
+
+  if (zoom === 1) {
+    panX = 0;
+    panY = 0;
+  }
+
+  modalImage.style.transform =
+    `translate(${panX}px, ${panY}px) scale(${zoom})`;
+
+  zoomLevel.textContent = `${Math.round(zoom * 100)}%`;
+
+  zoomArea.classList.toggle('zoomed', zoom > 1);
+  zoomArea.classList.toggle('dragging', dragging);
+
+  zoomHint.textContent = zoom > 1
+    ? 'גררו את התמונה כדי לזוז בתוכה'
+    : 'לחצו על אזור בעיצוב כדי להגדיל 🔍';
+}
+
+/*
+  Zoom around the exact point clicked.
+  The selected point stays under the pointer while the image grows.
+*/
+function zoomAt(nextZoom, clientX, clientY) {
+  const rect = zoomArea.getBoundingClientRect();
+
+  const pointX = clientX - rect.left - rect.width / 2;
+  const pointY = clientY - rect.top - rect.height / 2;
+
+  nextZoom = clamp(nextZoom, minZoom, maxZoom);
+
+  const ratio = nextZoom / zoom;
+
+  panX = pointX - (pointX - panX) * ratio;
+  panY = pointY - (pointY - panY) * ratio;
+
+  zoom = nextZoom;
+  updateZoom();
+}
+
+function resetZoom() {
+  zoom = 1;
+  panX = 0;
+  panY = 0;
+  dragging = false;
+  movedDuringPointer = false;
+  pinchStartDistance = 0;
+  updateZoom();
+}
+
+function zoomToCenter(nextZoom) {
+  const rect = zoomArea.getBoundingClientRect();
+
+  zoomAt(
+    nextZoom,
+    rect.left + rect.width / 2,
+    rect.top + rect.height / 2
+  );
+}
+
+/* CLICK THE IMAGE TO ZOOM INTO THAT SPOT */
+zoomArea.addEventListener('click', event => {
+  if (event.target.closest('.zoom-controls')) return;
+
+  if (suppressNextClick || movedDuringPointer) {
+    suppressNextClick = false;
+    movedDuringPointer = false;
+    return;
+  }
+
+  // Cycle: 100% -> 200% -> 300% -> reset.
+  let nextZoom;
+
+  if (zoom < 1.5) {
+    nextZoom = 2;
+  } else if (zoom < 2.5) {
+    nextZoom = 3;
+  } else {
+    nextZoom = 1;
+  }
+
+  zoomAt(nextZoom, event.clientX, event.clientY);
+});
+
+/* ZOOM BUTTONS */
+document.getElementById('zoomIn').addEventListener('click', event => {
+  event.stopPropagation();
+  zoomToCenter(zoom + 0.5);
+});
+
+document.getElementById('zoomOut').addEventListener('click', event => {
+  event.stopPropagation();
+  zoomToCenter(zoom - 0.5);
+});
+
+document.getElementById('zoomReset').addEventListener('click', event => {
+  event.stopPropagation();
+  resetZoom();
+});
+
+/* MOUSE DRAG TO MOVE A ZOOMED IMAGE */
+zoomArea.addEventListener('pointerdown', event => {
+  if (event.target.closest('.zoom-controls')) return;
+  if (event.pointerType !== 'mouse') return;
+  if (event.button !== 0 || zoom <= 1) return;
+
+  pointerDown = true;
+  dragging = false;
+  movedDuringPointer = false;
+
+  startX = event.clientX;
+  startY = event.clientY;
+  lastX = event.clientX;
+  lastY = event.clientY;
+
+  zoomArea.setPointerCapture(event.pointerId);
+});
+
+zoomArea.addEventListener('pointermove', event => {
+  if (!pointerDown || event.pointerType !== 'mouse') return;
+
+  const distanceX = event.clientX - startX;
+  const distanceY = event.clientY - startY;
+
+  if (Math.abs(distanceX) > 3 || Math.abs(distanceY) > 3) {
+    dragging = true;
+    movedDuringPointer = true;
+  }
+
+  if (dragging) {
+    panX += event.clientX - lastX;
+    panY += event.clientY - lastY;
+
+    lastX = event.clientX;
+    lastY = event.clientY;
+
+    updateZoom();
+  }
+});
+
+function finishPointerDrag() {
+  if (dragging || movedDuringPointer) {
+    suppressNextClick = true;
+
+    // Clear the click guard if the browser doesn't dispatch a click.
+    window.setTimeout(() => {
+      suppressNextClick = false;
+      movedDuringPointer = false;
+    }, 100);
+  }
+
+  pointerDown = false;
+  dragging = false;
+  updateZoom();
+}
+
+zoomArea.addEventListener('pointerup', finishPointerDrag);
+zoomArea.addEventListener('pointercancel', finishPointerDrag);
+
+/* MOUSE WHEEL ZOOM, CENTERED ON THE POINTER */
+zoomArea.addEventListener('wheel', event => {
+  if (event.target.closest('.zoom-controls')) return;
+
+  event.preventDefault();
+
+  const change = event.deltaY < 0 ? 0.25 : -0.25;
+
+  zoomAt(
+    zoom + change,
+    event.clientX,
+    event.clientY
+  );
+}, { passive: false });
+
+/* TWO-FINGER PINCH ZOOM ON TOUCHSCREENS */
+zoomArea.addEventListener('touchstart', event => {
+  if (event.touches.length === 2) {
+    const first = event.touches[0];
+    const second = event.touches[1];
+
+    pinchStartDistance = Math.hypot(
+      second.clientX - first.clientX,
+      second.clientY - first.clientY
+    );
+
+    pinchStartZoom = zoom;
+
+    pinchCenter = {
+      x: (first.clientX + second.clientX) / 2,
+      y: (first.clientY + second.clientY) / 2
+    };
+  }
+}, { passive: true });
+
+zoomArea.addEventListener('touchmove', event => {
+  if (event.touches.length !== 2 || !pinchStartDistance) return;
+
+  event.preventDefault();
+
+  const first = event.touches[0];
+  const second = event.touches[1];
+
+  const distance = Math.hypot(
+    second.clientX - first.clientX,
+    second.clientY - first.clientY
+  );
+
+  const nextZoom = pinchStartZoom * distance / pinchStartDistance;
+
+  zoomAt(
+    nextZoom,
+    pinchCenter.x,
+    pinchCenter.y
+  );
+}, { passive: false });
+
+zoomArea.addEventListener('touchend', event => {
+  if (event.touches.length < 2) {
+    pinchStartDistance = 0;
+    pinchCenter = null;
+  }
+});
+
+zoomArea.addEventListener('touchcancel', () => {
+  pinchStartDistance = 0;
+  pinchCenter = null;
+});
+
+/* PROJECT MODAL */
+projects.forEach(project => {
+  project.addEventListener('click', () => {
+    const image = project.querySelector('.project-image');
+
+    if (!image.complete || image.naturalWidth === 0) {
+      alert('התמונה לא נמצאה. בדקו שהיא נמצאת בתיקיית images וששם הקובץ נכון.');
+      return;
+    }
+
+    lastFocusedElement = project;
+
+    resetZoom();
+
+    modalImage.src = image.src;
+    modalImage.alt = image.alt;
+    modalTitle.textContent = project.dataset.title || '';
+    modalDescription.textContent = project.dataset.description || '';
+
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    document.getElementById('close').focus();
+  });
+});
+
+function closeModal() {
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+
+  resetZoom();
+  modalImage.src = '';
+
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
+}
+
+document.getElementById('close').addEventListener('click', closeModal);
+
+modal.addEventListener('click', event => {
+  if (event.target === modal) closeModal();
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && modal.classList.contains('open')) {
+    closeModal();
+  }
+
+  if (!modal.classList.contains('open')) return;
+
+  if (event.key === '+' || event.key === '=') {
+    zoomToCenter(zoom + 0.5);
+  }
+
+  if (event.key === '-') {
+    zoomToCenter(zoom - 0.5);
+  }
+
+  if (event.key === '0') {
+    resetZoom();
+  }
+});
+
+/* SCROLL REVEAL */
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealElements.forEach(element => observer.observe(element));
+} else {
+  revealElements.forEach(element => element.classList.add('visible'));
+}
+
+/* CUSTOM CURSOR — DESKTOP ONLY */
+const cursorDot = document.getElementById('cursorDot');
+const cursorRing = document.getElementById('cursorRing');
+const finePointer = window.matchMedia('(pointer: fine)');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (finePointer.matches && !reduceMotion.matches) {
+  document.body.classList.add('custom-cursor');
+
+  let mouseX = -100;
+  let mouseY = -100;
+  let ringX = -100;
+  let ringY = -100;
+  let cursorFrame = null;
+
+  document.addEventListener('mousemove', event => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+
+    cursorDot.style.transform =
+      `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
+
+    if (!cursorFrame) {
+      cursorFrame = requestAnimationFrame(animateRing);
+    }
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+
+    cursorRing.style.transform =
+      `translate3d(${ringX - 16}px, ${ringY - 16}px, 0)`;
+
+    if (Math.abs(mouseX - ringX) > 0.2 ||
+        Math.abs(mouseY - ringY) > 0.2) {
+      cursorFrame = requestAnimationFrame(animateRing);
+    } else {
+      cursorFrame = null;
+    }
+  }
+
+  document.querySelectorAll('a, button, .project').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+      cursorRing.classList.add('hovering');
+    });
+
+    element.addEventListener('mouseleave', () => {
+      cursorRing.classList.remove('hovering');
+    });
+  });
+
+  document.addEventListener('mouseleave', () => {
+    cursorDot.style.opacity = '0';
+    cursorRing.style.opacity = '0';
+  });
+
+  document.addEventListener('mouseenter', () => {
+    cursorDot.style.opacity = '';
+    cursorRing.style.opacity = '';
+  });
+}
+
+/* CURRENT YEAR */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
